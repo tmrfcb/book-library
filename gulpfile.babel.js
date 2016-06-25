@@ -32,9 +32,3 @@ gulp.task('sass', function (){
 			))
 		.pipe(gulp.dest(sassPaths.dest)) 
 });
-
- gulp.task('test', () =>
-	gulp.src('src/scripts/app.js')
-		// gulp-jasmine works on filepaths so you can't have any plugins before it 
-		.pipe(jasmine())
-);
