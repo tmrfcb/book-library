@@ -19,7 +19,7 @@ For ES6/ES2015 support
 - npm install babel-preset-es2015 --save-dev
 - npm install --save-dev gulp-jasmine
 
-#You should complie sass file and js file to run the project by running this commands :
+#You should compile sass file and js file to run the project by running this commands :
 
 For es6 compile
 - gulp scripts
