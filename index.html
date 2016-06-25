@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" media="all">
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/styles.css" media="all">
+  </head>
+  <body>
+    <header class="clearfix">
+      <h1>Books library</h1>
+      <label for="show-menu" class="show-menu">Show Menu</label>
+      <input type="checkbox" id="show-menu" role="button">
+      <ul id="menu" class="cf">
+        <li><a class="active" id="link-list" href="#">List</a></li>
+        <li><a id="link-add" href="#">Add</a></li>
+      </ul>
+    </header>
+    <div id="book-container">
+      <form id="new-book" method="get" novalidate>
+        <h2 id="title-form-book">Add a Book</h2>
+        <div>
+          <fieldset>
+            <div>
+              <label for="name">Name</label>
+              <div><input id="name" type="text" required="true" /></div>
+            </div>
+            <div>
+              <label for="author">Author</label>
+              <div><input id="author" type="text" required="true" /></div>
+            </div>
+            <div>
+              <label for="code_book">Book's code (ISBN)</label>
+              <div><input id="code-book" type="text" /></div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div>
+              <label for="category">
+              Category  
+              </label>
+              <div>
+                <select required="true" id="category">
+                  <option value="">Choose category</option>
+                  <option value="1">Art</option>
+                  <option value="2">History</option>
+                  <option value="3">Fiction</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div>
+              <label>Availability </label>
+              <label class="radioLabel" for="disponibility1"> 
+              Yes
+              <input type="radio" id="disponibility1" name="disponibility" value="1" required="true">
+              </label>
+              <label class="radioLabel" for="disponibility">
+              No
+              <input type="radio" id="disponibility2" name="disponibility" value="0" >
+              </label>
+            </div>
+          </fieldset>
+          <input type="hidden" id="book-id">
+          <button type="submit" id="save">New</button>
+        </div>
+      </form>
+      <div id="list-book-wp">
+        <div id="book-section-title">
+          <div>
+            <h2>List of Books</h2>
+          </div>
+        </div>
+        <div id="list-book">
+          <div id="book-table-header">
+            <div class="name">Name</div>
+            <div class="author">Author</div>
+            <div class="category">Category</div>
+            <div class="code_book">ISBN</div>
+            <div class="disponibility">Availability</div>
+            <div>Action</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

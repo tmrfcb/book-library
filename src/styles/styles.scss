@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 5%;
+  font-family: 'Gentium Book Basic', serif;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+/*Menu style*/
+
+ul#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    float: left;
+    margin-right: 1px;
+
+    a {
+      display: block;
+      min-width: 140px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #fff;
+      background: #2f3036;
+      text-decoration: none;
+    }
+
+    &:hover a, a.active {
+      background: #19c589;
+    }
+
+    &:hover ul a {
+      background: #f3f3f3;
+      color: #2f3036;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+li:hover ul a:hover {
+  background: #19c589;
+  color: #fff;
+}
+
+.show-menu {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  background: #19c589;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+}
+
+/*Hide checkbox*/
+
+input#show-menu {
+  display: none;
+
+  &:checked ~ #menu {
+    display: block;
+  }
+}
+
+/*Show menu when invisible checkbox is checked*/
+
+/*Form style*/
+
+form > div {
+  clear: both;
+  padding: 1px;
+  margin: 0 0 10px 0;
+
+  > fieldset label:not(.radioLabel) {
+    font-size: 90%;
+    font-weight: bold;
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+  }
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+
+  > div {
+    margin-bottom: 10px;
+  }
+}
+
+input {
+  &[type=text], &[type=email], &[type=url], &[type=password] {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+textarea {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+input {
+  &[type=text], &[type=email], &[type=url], &[type=password] {
+    width: 50%;
+  }
+}
+
+select {
+  width: 50%;
+}
+
+input {
+  &[type=text]:focus, &[type=email]:focus, &[type=url]:focus, &[type=password]:focus {
+    outline: 0;
+    border-color: #4697e4;
+  }
+}
+
+[type=submit] {
+  padding: 5px 10px;
+}
+
+textarea:focus {
+  outline: 0;
+  border-color: #4697e4;
+}
+
+/*list of books*/
+
+#list-book {
+  display: table;
+  width: 100%;
+
+  > * {
+    display: table-row;
+
+    > * {
+      display: table-cell;
+      padding: 5px;
+    }
+  }
+
+  #book-table-header {
+    font-weight: bold;
+  }
+}
+
+#new-book {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  ul#menu {
+    position: static;
+    display: none;
+
+    li {
+      margin-bottom: 1px;
+      width: 100%;
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  .show-menu {
+    display: block;
+  }
+
+  form > div {
+    margin: 0 0 15px 0;
+
+    > fieldset label:not(.radioLabel) {
+      width: 100%;
+      margin: 0 0 5px 0;
+    }
+  }
+
+  input {
+    &[type=text], &[type=email], &[type=url], &[type=password] {
+      width: 100%;
+    }
+  }
+
+  textarea, select {
+    width: 100%;
+  }
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+
+  display: inline-block;
+}
+
+/* start commented backslash hack \*/
+
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+/* close commented backslash hack */
