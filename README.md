@@ -1,4 +1,4 @@
-# book-library
+# books library
 
 A simple Frontend app for books library 
 You can prepare envirenment by running this commands :
