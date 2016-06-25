@@ -1,28 +1,28 @@
 # book-library
-A simple Frontend app for books library 
 
+A simple Frontend app for books library 
 You can prepare envirenment by running this commands :
 
 npm install gulp
 npm install gulp-jasmine
 
-# For es6 compile
+For es6 compile
 npm install --save-dev gulp-babel
 npm install babel-register
 npm install babel-core --save-dev
 
-# For sass compile
+For sass compile
 npm install gulp-sass
 npm install gulp-autoprefixer
  
-# For ES6/ES2015 support
+For ES6/ES2015 support
 npm install babel-preset-es2015 --save-dev
 npm install --save-dev gulp-jasmine
 
-You should complie sass file and js file to run the project by running this commands :
+#You should complie sass file and js file to run the project by running this commands :
 
-# For es6 compile
+For es6 compile
 gulp scripts
 
-#For sass compile
+For sass compile
 gulp sass
