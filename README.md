@@ -3,8 +3,9 @@
 A simple Frontend app for books library 
 You can prepare envirenment by running this commands :
 
-npm install gulp
-npm install gulp-jasmine
+-npm install gulp
+
+-npm install gulp-jasmine
 
 For es6 compile
 npm install --save-dev gulp-babel
