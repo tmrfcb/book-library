@@ -19,7 +19,7 @@ For sass compile
 For ES6/ES2015 support
 - npm install babel-preset-es2015 --save-dev
 - npm install --save-dev gulp-jasmine
-- 
+
 # Run project
 You can compile sass file and js file by running this commands :
 
