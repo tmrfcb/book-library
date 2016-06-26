@@ -17,12 +17,13 @@
     <!-- include spec files here... --> 
     <script src="spec.js"></script> 
     <style type="text/css">
-#new-book {
+#new-book,
+#list-book .action,
+#link-list,
+#link-add {
     display: none  !important;
 }
-#list-book .action {
-   display: none  !important;
-}
+ 
     </style>
   </head>
   <body>
@@ -35,6 +36,7 @@
           <ul id="menu" class="cf">
             <li><a class="active" id="link-list" href="#">List of the Books <i class="fa fa-book" aria-hidden="true"></i></a></li>
             <li><a id="link-add" href="#">Add a Book <i class="fa fa-plus" aria-hidden="true"></i></a></li>
+            <li><a href="../index.html">Back to the project <i class="fa fa-plus" aria-hidden="true"></i></a></li>
           </ul>
         </nav>
       </div>
