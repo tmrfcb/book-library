@@ -28,3 +28,5 @@ For es6 compile
 
 For sass compile
 - gulp sass
+
+to generate Mock data open "/spec/test.html" in browser
