@@ -2,7 +2,7 @@
 
 # Prepare environment
 A simple Frontend app for books library 
-You can prepare envirenment by running this commands :
+You can prepare envirenment by running this commands in console as administrator:
 
 - npm install gulp
 - npm install gulp-jasmine
@@ -21,7 +21,7 @@ For ES6/ES2015 support
 - npm install --save-dev gulp-jasmine
 
 # Run project
-You can compile sass file and js file by running this commands :
+You can compile sass file and js file by running this commands in console as administrator:
 
 For es6 compile
 - gulp scripts
