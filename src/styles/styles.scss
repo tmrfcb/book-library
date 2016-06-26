@@ -3,76 +3,80 @@
 }
 
 body {
-  padding: 20px 5%;
+  padding: 20px 0;
   font-family: 'Gentium Book Basic', serif;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
 }
 
 header {
   margin-bottom: 20px;
 }
 
+h1 {
+  text-align: center;
+  color: #888;
+}
+
+h2 {
+  color: #888;
+}
+
 /*Menu style*/
 
-ul#menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+nav {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-  li {
-    display: inline-block;
-    float: left;
-    margin-right: 1px;
+  ul#menu {
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    float: right;
 
-    a {
+    li {
+      display: inline-block;
+      float: left;
+      margin-right: 1px;
+
+      a {
+        display: block;
+        padding: 30px 20px;
+        text-align: center;
+        color: #222;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      &:hover a, a.active {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .show-menu {
+    text-decoration: none;
+    color: #fff;
+    background: #19c589;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+  }
+
+  input#show-menu {
+    display: none;
+
+    &:checked ~ #menu {
       display: block;
-      min-width: 140px;
-      height: 50px;
-      text-align: center;
-      line-height: 50px;
-      color: #fff;
-      background: #2f3036;
-      text-decoration: none;
-    }
-
-    &:hover a, a.active {
-      background: #19c589;
-    }
-
-    &:hover ul a {
-      background: #f3f3f3;
-      color: #2f3036;
-      height: 40px;
-      line-height: 40px;
     }
   }
 }
-
-li:hover ul a:hover {
-  background: #19c589;
-  color: #fff;
-}
-
-.show-menu {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-decoration: none;
-  color: #fff;
-  background: #19c589;
-  text-align: center;
-  padding: 10px 0;
-  display: none;
-}
-
-/*Hide checkbox*/
-
-input#show-menu {
-  display: none;
-
-  &:checked ~ #menu {
-    display: block;
-  }
-}
-
-/*Show menu when invisible checkbox is checked*/
 
 /*Form style*/
 
@@ -81,12 +85,19 @@ form > div {
   padding: 1px;
   margin: 0 0 10px 0;
 
-  > fieldset label:not(.radioLabel) {
-    font-size: 90%;
-    font-weight: bold;
-    width: 25%;
-    float: left;
-    padding-right: 10px;
+  > fieldset {
+    label:not(.radioLabel) {
+      font-size: 90%;
+      font-weight: bold;
+      width: 25%;
+      float: left;
+      padding-right: 10px;
+    }
+
+    > div > div {
+      width: 75%;
+      float: right;
+    }
   }
 }
 
@@ -96,6 +107,8 @@ fieldset {
 
   > div {
     margin-bottom: 10px;
+    float: left;
+    width: 100%;
   }
 }
 
@@ -119,12 +132,12 @@ textarea {
 
 input {
   &[type=text], &[type=email], &[type=url], &[type=password] {
-    width: 50%;
+    width: 100%;
   }
 }
 
 select {
-  width: 50%;
+  width: 100%;
 }
 
 input {
@@ -160,6 +173,10 @@ textarea:focus {
 
   #book-table-header {
     font-weight: bold;
+
+    > * {
+      border-bottom: solid 1px;
+    }
   }
 }
 
@@ -168,30 +185,45 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
-  ul#menu {
-    position: static;
-    display: none;
-
-    li {
-      margin-bottom: 1px;
-      width: 100%;
-
-      a {
-        width: 100%;
-      }
-    }
+  .container {
+    width: 100%;
+    padding: 0 10px;
   }
 
-  .show-menu {
-    display: block;
+  nav {
+    ul#menu {
+      position: static;
+      display: none;
+      float: none;
+
+      li {
+        margin-bottom: 1px;
+        width: 100%;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+
+    .show-menu {
+      display: block;
+    }
   }
 
   form > div {
     margin: 0 0 15px 0;
 
-    > fieldset label:not(.radioLabel) {
-      width: 100%;
-      margin: 0 0 5px 0;
+    > fieldset {
+      label:not(.radioLabel) {
+        width: 100%;
+        margin: 0 0 5px 0;
+      }
+
+      > div > div {
+        width: 100%;
+        float: none;
+      }
     }
   }
 
@@ -204,9 +236,21 @@ textarea:focus {
   textarea, select {
     width: 100%;
   }
+
+  #list-book-wp {
+    overflow-x: scroll;
+  }
+
+  #list-book {
+    .code_book, .disponibility {
+      display: none;
+    }
+  }
 }
 
 .clearfix {
+  display: inline-block;
+
   &:after {
     visibility: hidden;
     display: block;
@@ -215,8 +259,6 @@ textarea:focus {
     clear: both;
     height: 0;
   }
-
-  display: inline-block;
 }
 
 /* start commented backslash hack \*/

@@ -27,6 +27,7 @@ class LibraryBookApp {
       this.menuLinkList = document.getElementById('link-list');
       this.menuLinkAdd = document.getElementById('link-add');
       this.book = {};
+
       // Validate form on button click.
       this.bookForm.addEventListener('submit', e => this.validateForm(e), false);
       this.menuLinkList.addEventListener('click', e => this.changePage(e, this.menuLinkList), false);
@@ -68,12 +69,34 @@ class LibraryBookApp {
         key = this.bookBookIdInput.value;
         this.bookBookIdInput.value = '';
       }
-      this.addBookButton.textContent = 'New';
-      this.bookTitleFormBook.textContent = 'Add a Book';
+      this.addBookButton.innerHTML = 'New <i class="fa fa-plus" aria-hidden="true"></i>';
+      this.bookTitleFormBook.innerHTML = 'Add a Book <i class="fa fa-plus" aria-hidden="true"></i>';
       this.bookForm.style.display = 'none';
       this.bookList.style.display = 'block';
       this.menuLinkAdd.className = "";
       this.menuLinkList.className = "active";
+   
+      localStorage.setItem(key, JSON.stringify(this.book));
+      this.displayBook(key, JSON.stringify(this.book));
+    }
+  mockData(object) {
+      // Push values in object
+      
+        this.book.name = object.name;
+     
+     
+        this.book.author = object.author;
+        
+       
+        this.book.category = object.category;
+        
+      
+        this.book.codebook = object.codebook;
+ 
+        this.book.disponibility = object.disponibility;
+        
+      let key; 
+        key = Date.now().toString(); 
       localStorage.setItem(key, JSON.stringify(this.book));
       this.displayBook(key, JSON.stringify(this.book));
     }
@@ -103,6 +126,7 @@ class LibraryBookApp {
     // validate form
   validateForm(e) {
     e.preventDefault();
+    console.log(this.bookNameInput.value)
     if (this.bookNameInput.value == "" && this.bookNameInput.required) {
       alert("Please provide the book name!");
       this.bookNameInput.focus();
@@ -127,7 +151,7 @@ class LibraryBookApp {
     this.saveBook(this.bookBookIdInput.value);
   }
   changePage(e, link) {
-      console.log(link.getAttribute("id"))
+ 
       if (link.getAttribute("id") == 'link-add') {
         this.bookForm.style.display = 'block';
         this.bookList.style.display = 'none';
@@ -245,8 +269,8 @@ class LibraryBook extends HTMLElement {
     if (obj.disponibility) {
       app.setRadioValue(app.bookDisponibilityInput, obj.disponibility);
     }
-    app.addBookButton.textContent = 'Save';
-    app.bookTitleFormBook.textContent = 'Edit Book';
+    app.addBookButton.innerHTML = 'Save <i class="fa fa-floppy-o" aria-hidden="true"></i>';
+    app.bookTitleFormBook.innerHTML = 'Edit Book <i class="fa fa-pencil-square-o" aria-hidden="true"></i>';
     app.bookBookIdInput.value = this.id;
     app.bookForm.style.display = 'block';
   }
@@ -258,12 +282,14 @@ LibraryBook.TEMPLATE = `
     <div class="category"></div>
     <div class="code_book"></div>
     <div class="disponibility"></div> 
+    <div class="action">
     <button class="delete">
-      Delete
+      Delete <i class="fa fa-times" aria-hidden="true"></i>
     </button>
     <button class="edit">
-      Edit
+      Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  
     </button>
+    </div>
     `;
 // LibraryBook elements classes.
 LibraryBook.CLASSES = ['library-book'];
