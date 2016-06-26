@@ -16,6 +16,14 @@
     <script src="../src/scripts/app.js"></script>
     <!-- include spec files here... --> 
     <script src="spec.js"></script> 
+    <style type="text/css">
+#new-book {
+    display: none  !important;
+}
+#list-book .action {
+   display: none  !important;
+}
+    </style>
   </head>
   <body>
     <header class="clearfix">
@@ -33,7 +41,7 @@
     </header>
     <div class="container">
       <div id="book-container">
-        <form id="new-book" method="get" novalidate>
+        <form id="new-book" method="get"  novalidate >
           <h2 id="title-form-book">Add a Book <i class="fa fa-plus" aria-hidden="true"></i></h2>
           <div>
             <fieldset>
