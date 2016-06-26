@@ -117,7 +117,8 @@ class LibraryBookApp {
         this.bookListContainer.insertBefore(book, this.bookTableHeader.nextSibling);
       }
       // If the object is null we delete the book.
-      if (!object) {
+     if(Object.keys(object).length === 0)
+     {
         return book.deleteBook();
       }
       book.setBook(object);
